@@ -1,0 +1,17 @@
+#!/usr/bin/with-contenv bashio
+# ==============================================================================
+# Home Assistant Add-on: Photons Interactor
+# ==============================================================================
+
+
+bashio::log.info "Starting Photons Interactor"
+
+cd /config/photons || bashio::exit.nok "Could not change directory to Photons"
+
+if bashio::fs.file_exists '/config/photons/interactor.yml'; then
+  export LIFX_CONFIG="/config/photons/interactor.yml"
+else
+  export INTERACTOR_HOST="0.0.0.0"
+fi
+
+exec lifx lan:interactor

@@ -1,0 +1,26 @@
+{
+  "name": "Photons Interactor",
+  "version": "dev",
+  "slug": "photons-interactor",
+  "description": "Photons Interactor provides a local RESTful API for LIFX devices",
+  "url": "https://photons.delfick.com/apps/interactor/homeassistant.html",
+  "init": false,
+  "arch": [
+    "amd64",
+    "aarch64",
+    "armhf",
+    "armv7",
+    "i386"
+  ],
+  "host_network": true,
+  "ports": {
+    "6100/tcp": 6100
+  },
+  "ports_description": {
+    "6100/tcp": "Photons Interactor API Port"
+  },
+  "apparmor": false,
+  "map": [
+    "config:rw"
+  ]
+}

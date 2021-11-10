@@ -1,0 +1,41 @@
+.:53 {
+    log {
+        class error
+    }
+    errors
+    loop
+
+    hosts /config/hosts {
+        fallthrough
+    }
+    template ANY AAAA local.hass.io hassio {
+        rcode NOERROR
+    }
+    template IN PTR in-addr.arpa {
+      match ^(?P<d>[0-9]*)[.](?P<c>[0-9]*)[.](?P<b>[0-9]*)[.](?P<a>[0-9]*)[.]in-addr[.]arpa[.]$
+      answer "{{ .Name }} 3600 IN PTR ip-{{ .Group.a }}-{{ .Group.b }}-{{ .Group.c }}-{{ .Group.d }}.local.hass.io."
+    }
+
+    mdns
+
+    forward . dns://192.168.254.5 {
+        except local.hass.io
+        policy sequential
+
+    }
+
+    cache 600
+}
+
+.:5553 {
+    log {
+        class error
+    }
+    errors
+
+    forward . tls://1.1.1.1 tls://1.0.0.1 {
+        tls_servername cloudflare-dns.com
+        except local.hass.io
+    }
+    cache 600
+}

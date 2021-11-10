@@ -1,0 +1,30 @@
+#!/usr/bin/with-contenv bashio
+
+CONTAINER_NAME=hassio_dns
+INTERVAL=60
+
+push_required(){
+
+    docker cp /etc/corefile.required $CONTAINER_NAME:/etc/corefile || bashio::log.error "Failed trying to restore configuration to $CONTAINER_NAME."
+
+    # Now restart coredns
+    docker exec $CONTAINER_NAME pkill coredns || bashio.log.error "Failed to restart CoreDNS in $CONTAINER_NAME"
+
+    bashio::log.info "Configuration changed detected, reverted and CoreDNS restarted."
+}
+
+fetch_and_check(){
+    docker cp $CONTAINER_NAME:/etc/corefile /tmp/current || bashio::log.error "Could not retrieve current configuration from $CONTAINER_NAME"
+    if ! diff -s /tmp/current /etc/corefile.required > /dev/null; then
+        # Files differ so
+        push_required
+    fi
+    rm -f /tmp/current
+}
+
+
+while true
+do
+    fetch_and_check
+    sleep $INTERVAL
+done

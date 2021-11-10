@@ -1,0 +1,9 @@
+{
+  "build_from": {
+    "aarch64": "debian:stable-slim",
+    "amd64": "debian:stable-slim",
+    "armhf": "debian:stable-slim",
+    "armv7": "debian:stable-slim",
+    "i386": "debian:stable-slim"
+  }
+}

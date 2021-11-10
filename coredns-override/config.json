@@ -1,0 +1,17 @@
+{
+  "name": "Core DNS Override",
+  "version": "0.5-alpha",
+  "slug": "coredns-fix",
+  "description": "Periodically ensure the DNS container is using the right config",
+  "url": "https://github.com/Djelibeybi/HomeAssistantAddons/tree/main/core-dns-override",
+  "advanced": true,
+  "homeassistant": "0.92.0b2",
+  "arch": ["aarch64", "amd64", "armhf", "armv7", "i386"],
+  "apparmor": false,
+  "docker_api": true,
+  "privileged": ["NET_ADMIN", "SYS_ADMIN", "SYS_RAWIO", "SYS_TIME", "SYS_NICE"],
+  "map": [
+    "config:rw"
+  ],
+  "journald": true
+}
