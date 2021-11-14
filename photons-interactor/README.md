@@ -21,6 +21,7 @@ Photons Interactor currently supports:
 
 ## Support
 
-Got questions? Please [open an issue][issue] on GitHub.
+Got questions? Please [open an issue][issues] on GitHub.
 
 [docs]: ./photons-interactor/DOCS.md
+[issues]: https://github.com/djelibeybi/hassio-addons/issues
