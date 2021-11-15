@@ -1,3 +1,5 @@
 *.swp
 *~
 *bk
+.vscode/
+*.code-workspace
