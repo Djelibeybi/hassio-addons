@@ -1,2 +1,2 @@
-lifx-photons-core==0.41.0
-lifx-photons-interactor==0.10.0
+lifx-photons-core==0.42.2
+lifx-photons-interactor==0.12.0
