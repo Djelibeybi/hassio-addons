@@ -2,16 +2,24 @@
 # ==============================================================================
 # Home Assistant Add-on: Photons Interactor
 # ==============================================================================
+ip_address=$(bashio::network.ipv4_address)
+port=$(bashio::addon.port 6100)
+hostname=$(bashio::host.hostname)
 
-
-bashio::log.info "Starting Photons Interactor"
+bashio::log.info "Starting Photons Interactor on $hostname ($ip_address:$port)"
 
 cd /config/photons || bashio::exit.nok "Could not change directory to Photons"
 
-if bashio::fs.file_exists '/config/photons/interactor.yml'; then
-  export LIFX_CONFIG="/config/photons/interactor.yml"
-else
-  export INTERACTOR_HOST="0.0.0.0"
+if ! bashio::fs.file_exists '/config/photons/interactor.yml'; then
+  bashio::var.json \
+          interface "$ip_address" \
+          port "$port" \
+          hostname "$hostname" \
+          | tempio \
+              -template /usr/share/tempio/interactor.yml.template \
+              -out /config/photons/interactor.yml
 fi
 
+export LIFX_CONFIG="/config/photons/interactor.yml"
+export PHOTONS_SILENT_BY_DEFAULT=1
 exec lifx lan:interactor

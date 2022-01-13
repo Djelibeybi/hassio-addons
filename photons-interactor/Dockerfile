@@ -21,6 +21,7 @@ RUN \
         gcc \
         g++ \
         locales \
+        net-tools \
         python3-dev \
         python3-distutils \
         python3 \

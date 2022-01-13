@@ -1,5 +1,5 @@
 interactor:
-    host: 0.0.0.0
+    host: {{ .ip_address}}
     port: {{ .port }}
 
     database:
@@ -14,3 +14,8 @@ interactor:
           FIRMWARE: 86400 # Cache the firmware version for a day
           GROUP: 780 # Cache group information for 13 minutes
           LOCATION: 9600 # Cache location information for 16 minutes
+
+    zeroconf:
+      enabled: true
+      ip_address: {{ .ip_address }}
+      name: {{ .hostname }}
