@@ -17,8 +17,6 @@ Photons Interactor currently supports:
 * Transforming the devices in a similar way to the LIFX HTTP API.
 * Controlling tile animations
 
-[:books: Read the full add-on documentation][docs]
-
 ## Support
 
 Got questions? Please [open an issue][issues] on GitHub.
