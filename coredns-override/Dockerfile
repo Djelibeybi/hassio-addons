@@ -11,8 +11,7 @@ ENV TERM="xterm-256color"
 # Setup base
 ARG BUILD_ARCH=amd64
 
-RUN apk add --no-cache \
-        docker-20.10.11-r0
+RUN apk add --no-cache docker
 
 # Copy root filesystem
 COPY rootfs /

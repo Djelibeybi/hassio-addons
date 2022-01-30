@@ -1,6 +1,6 @@
 {
   "name": "Core DNS Override",
-  "version": "0.6-alpha",
+  "version": "0.7-alpha",
   "slug": "coredns-fix",
   "description": "Periodically ensure the DNS container is using the right config",
   "url": "https://github.com/Djelibeybi/HomeAssistantAddons/tree/main/core-dns-override",
