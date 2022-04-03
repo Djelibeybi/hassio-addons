@@ -28,11 +28,13 @@ else
   bashio::log.info "Starting Photons Interactor using /config/photons/interactor.yml"
 fi
 
+
 if bashio::config.true 'enable_logging'; then
   bashio::log.info "Photons Interactor verbose logging enabled."
+  export PHOTONS_SILENT_BY_DEFAULT=0
 else
   bashio::log.info "Photons Interactor versbose logging disabled."
-  export PHOTONS_SILENT_BY_DEFAULT=0
+  export PHOTONS_SILENT_BY_DEFAULT=1
 fi
 
 exec lifx lan:interactor
