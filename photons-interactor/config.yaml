@@ -16,8 +16,10 @@ hassio_api: true
 init: false
 options:
   enable_logging: false
+  override_config_file: false
 schema:
   enable_logging: bool
+  override_config_file: bool
 ports:
   6100/tcp: 6100
 ports_description:
