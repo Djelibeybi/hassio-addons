@@ -6,7 +6,7 @@ ip_address=$(bashio::network.ipv4_address)
 port=$(bashio::addon.port 6100)
 hostname=$(bashio::host.hostname)
 
-cd /config/photons || bashio::exit.nok "Could not change directory to Photons"
+cd /config/photons || bashio::exit.nok "Could not access Photons Interactor configuration directory"
 
 if ! bashio::fs.file_exists '/config/photons/interactor.yml'; then
   bashio::var.json \
@@ -33,7 +33,7 @@ if bashio::config.true 'enable_logging'; then
   bashio::log.info "Photons Interactor verbose logging enabled."
   export PHOTONS_SILENT_BY_DEFAULT=0
 else
-  bashio::log.info "Photons Interactor versbose logging disabled."
+  bashio::log.info "Photons Interactor verbose logging disabled."
   export PHOTONS_SILENT_BY_DEFAULT=1
 fi
 

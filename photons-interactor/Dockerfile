@@ -1,4 +1,4 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/debian-base/amd64:5.0.0
+ARG BUILD_FROM=ghcr.io/hassio-addons/debian-base:6.1.2
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -76,10 +76,10 @@ LABEL \
     maintainer="Avi Miller <me@dje.li>" \
     org.opencontainers.image.title="${BUILD_NAME}" \
     org.opencontainers.image.description="${BUILD_DESCRIPTION}" \
-    org.opencontainers.image.vendor="Photons" \
+    org.opencontainers.image.vendor="" \
     org.opencontainers.image.authors="Avi Miller <me@dje.li>" \
     org.opencontainers.image.licenses="MIT" \
-    org.opencontainers.image.url="https://photons.delfick.com" \
+    org.opencontainers.image.url="" \
     org.opencontainers.image.source="https://github.com/${BUILD_REPOSITORY}" \
     org.opencontainers.image.documentation="https://github.com/${BUILD_REPOSITORY}/blob/main/README.md" \
     org.opencontainers.image.created=${BUILD_DATE} \

@@ -1,6 +1,6 @@
 {
     "name": "Photons Interactor",
-    "version": "0.12.0.4",
+    "version": "0.12.4",
     "slug": "photons-interactor",
     "description": "Photons Interactor provides a local RESTful API for LIFX devices",
     "url": "https://photons.delfick.com/apps/interactor/homeassistant.html",
