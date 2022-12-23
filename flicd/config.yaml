@@ -1,5 +1,5 @@
 ---
-version: 2022.12.4
+version: 2022.12.5
 hassio_api: false
 slug: flicd
 name: flicd
@@ -19,7 +19,7 @@ options:
 ports:
   5551/tcp: 5551
 ports_description:
-  5551/tcp: Inbound port for flic component connection
+  5551/tcp: Incoming connections from flic integration
 host_network: true
 devices:
   - /dev/hci*
