@@ -1,5 +1,5 @@
 ---
-version: 2022.12.2
+version: 2022.12.3
 hassio_api: false
 slug: flicd
 name: flicd
