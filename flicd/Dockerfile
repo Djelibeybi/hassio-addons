@@ -1,6 +1,9 @@
 ARG BUILD_FROM
 FROM $BUILD_FROM
 
+ARG BUILD_ARCH
+ARG BUILD_VERSION
+
 # Setup base
 RUN case $(BUILD_ARCH) in \
         x86_64|amd64) export ARCH=x86_64 ;; \
