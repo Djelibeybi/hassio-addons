@@ -1,5 +1,5 @@
 ---
-version: 2022.12.1
+version: 2022.12.2
 hassio_api: false
 slug: flicd
 name: flicd
@@ -20,5 +20,7 @@ ports_description:
 host_network: true
 devices:
   - /dev/hci*
+privileged:
+  - NET_ADMIN
 schema:
   hci_dev: str

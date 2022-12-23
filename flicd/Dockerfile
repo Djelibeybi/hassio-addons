@@ -18,6 +18,7 @@ RUN apk add --no-cache git ; \
 
 # Copy data
 COPY data/run.sh /
+RUN chmod +x /run.sh
 
 # run flicd
 CMD [ "/run.sh" ]
