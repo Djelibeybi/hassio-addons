@@ -8,7 +8,7 @@ ARG BUILD_VERSION
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Setup base
-RUN case $(BUILD_ARCH) in \
+RUN case $BUILD_ARCH in \
         x86_64|amd64) export ARCH=x86_64 ;; \
         i386) export ARCH=i386 ;; \
         armv6l|armv7l) export ARCH=armv6l ;; \
