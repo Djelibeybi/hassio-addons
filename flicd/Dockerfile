@@ -18,7 +18,7 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get --assume-yes instal
     esac && \
     curl -fL "https://raw.githubusercontent.com/50ButtonsEach/fliclib-linux-hci/${FLICD_VERSION}/bin/${ARCH}/flicd" -o /usr/bin/flicd ; \
     chmod +x /usr/bin/flicd ; \
-    apt-get --assume-yes remove git curl && apt-get --assume-yes autoremove ; \
+    apt-get --assume-yes remove git && apt-get --assume-yes autoremove ; \
     rm -rf /var/cache/apt && rm -rf /tmp/src
 
 # Copy data
