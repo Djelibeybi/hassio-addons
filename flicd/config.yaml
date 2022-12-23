@@ -12,6 +12,7 @@ arch:
   - aarch64
   - amd64
   - i386
+  - armv7
 init: false
 options:
   hci_dev: hci0

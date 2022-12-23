@@ -3,6 +3,7 @@ FROM $BUILD_FROM
 
 ARG BUILD_ARCH
 ARG BUILD_VERSION
+ARG FLICD_VERSION
 
 # switch to bash
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
@@ -14,7 +15,7 @@ RUN case $BUILD_ARCH in \
         armhf|armv6l|armv7l) export ARCH=armv6l ;; \
         aarch64) export ARCH=aarch64 ;; \
     esac && \
-    export FLICD_URL="https://raw.githubusercontent.com/50ButtonsEach/fliclib-linux-hci/${BUILD_VERSION}/bin/${ARCH}/flicd" ; \
+    export FLICD_URL="https://raw.githubusercontent.com/50ButtonsEach/fliclib-linux-hci/${FLICD_VERSION}/bin/${ARCH}/flicd" ; \
     echo $FLICD_URL ; \
     curl -fL "$FLICD_URL" -o /usr/bin/flicd ;\
     chmod +x /usr/bin/flicd

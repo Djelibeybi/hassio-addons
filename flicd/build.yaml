@@ -1,4 +1,5 @@
----
+image: "djelibeybi/hassio-flic-{arch}"
+shadow_repository: "ghcr.io/djelibeybi"
 build_from:
   aarch64: ghcr.io/home-assistant/aarch64-base:3.16
   amd64: ghcr.io/home-assistant/amd64-base:3.16
@@ -8,3 +9,5 @@ build_from:
 codenotary:
   signer: me@dje.li
   base_image: notary@home-assistant.io
+args:
+  FLICD_VERSION: "2.0.3"
