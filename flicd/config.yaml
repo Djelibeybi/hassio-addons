@@ -4,6 +4,7 @@ hassio_api: false
 slug: flicd
 name: flicd
 description: Flic daemon
+codenotary: me@dje.li
 url: https://github.com/Djelibeybi/hassio-addons/tree/main/flicd
 arch:
   - armhf
