@@ -1,0 +1,24 @@
+---
+version: 2022.12.1
+hassio_api: false
+slug: flicd
+name: flicd
+description: Flic daemon
+url: https://github.com/Djelibeybi/hassio-addons/tree/main/flicd
+arch:
+  - armhf
+  - aarch64
+  - amd64
+  - i386
+init: false
+options:
+  hci_dev: hci0
+ports:
+  5551/tcp: 5551
+ports_description:
+  5551/tcp: Inbound port for flic component connection
+host_network: true
+devices:
+  - /dev/hci*
+schema:
+  hci_dev: str
