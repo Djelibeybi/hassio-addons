@@ -3,7 +3,8 @@ FROM $BUILD_FROM
 
 # Setup base
 RUN export ARCH=$(uname -m) ; \
-    curl -fL "https://raw.githubusercontent.com/50ButtonsEach/fliclib-linux-hci/2.0.3/bin/$ARCH/flicd" -o /usr/bin/flicd ;\
+    export FLICD_URL="https://raw.githubusercontent.com/50ButtonsEach/fliclib-linux-hci/2.0.3/bin/${ARCH}/flicd" ; \
+    curl -fL "$FLICD_URL" -o /usr/bin/flicd ;\
     chmod +x /usr/bin/flicd
 
 # Copy data
