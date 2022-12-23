@@ -11,7 +11,7 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN case $BUILD_ARCH in \
         x86_64|amd64) export ARCH=x86_64 ;; \
         i386) export ARCH=i386 ;; \
-        armv6l|armv7l) export ARCH=armv6l ;; \
+        armhf|armv6l|armv7l) export ARCH=armv6l ;; \
         aarch64) export ARCH=aarch64 ;; \
     esac && \
     export FLICD_URL="https://raw.githubusercontent.com/50ButtonsEach/fliclib-linux-hci/${BUILD_VERSION}/bin/${ARCH}/flicd" ; \
