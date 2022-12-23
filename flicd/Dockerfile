@@ -4,6 +4,9 @@ FROM $BUILD_FROM
 ARG BUILD_ARCH
 ARG BUILD_VERSION
 
+# switch to bash
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+
 # Setup base
 RUN case $(BUILD_ARCH) in \
         x86_64|amd64) export ARCH=x86_64 ;; \
@@ -12,6 +15,7 @@ RUN case $(BUILD_ARCH) in \
         aarch64) export ARCH=aarch64 ;; \
     esac && \
     export FLICD_URL="https://raw.githubusercontent.com/50ButtonsEach/fliclib-linux-hci/${BUILD_VERSION}/bin/${ARCH}/flicd" ; \
+    echo $FLICD_URL ; \
     curl -fL "$FLICD_URL" -o /usr/bin/flicd ;\
     chmod +x /usr/bin/flicd
 
